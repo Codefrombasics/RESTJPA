@@ -1,6 +1,6 @@
 package com.example.RESTJPA.service;
 
-import com.example.RESTJPA.dao.EmployeeDAO;
+import com.example.RESTJPA.dao.EmployeeRepository;
 import com.example.RESTJPA.entity.Employee;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,27 +11,26 @@ import java.util.List;
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
     @Autowired
-    private EmployeeDAO employeeDAO;
+    private EmployeeRepository employeeRepository;
     @Override
     public List<Employee> findAll() {
-        return employeeDAO.findAll();
+        return employeeRepository.findAll();
     }
 
     @Override
     public Employee findById(int id) {
-        return employeeDAO.findById(id);
+        return employeeRepository.findById(id).get();
     }
 
     @Override
-    @Transactional
+
     public Employee save(Employee employee) {
-        return employeeDAO.save(employee);
+        return employeeRepository.save(employee);
     }
 
     @Override
-    @Transactional
     public void deleteById(int id) {
-        employeeDAO.deleteById(id);
+        employeeRepository.deleteById(id);
     }
 
 }

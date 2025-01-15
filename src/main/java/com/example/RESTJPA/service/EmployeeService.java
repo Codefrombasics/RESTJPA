@@ -1,8 +1,6 @@
 package com.example.RESTJPA.service;
 
-import com.example.RESTJPA.dao.EmployeeDAO;
 import com.example.RESTJPA.entity.Employee;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

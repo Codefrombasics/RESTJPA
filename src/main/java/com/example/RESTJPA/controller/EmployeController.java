@@ -1,7 +1,6 @@
 package com.example.RESTJPA.controller;
 
 
-import com.example.RESTJPA.dao.EmployeeDAO;
 import com.example.RESTJPA.entity.Employee;
 import com.example.RESTJPA.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
